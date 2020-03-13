@@ -24,10 +24,6 @@ def SubmitBtn(lesson,lesson_level,question,widget):
     
     # Submit function
     def submit(b):
-        # print widget value
-        with output:
-            output.clear_output()
-            print(widget.value)
 
         # logging
         host = "check.hourofci.org"
@@ -38,7 +34,12 @@ def SubmitBtn(lesson,lesson_level,question,widget):
         # print(url)
         # send_request
         r = requests.get(url)
-        if r.status_code == requests.codes.ok:
-            print("Submit Successfully!")
+
+        # print widget value
+        with output:
+            output.clear_output()
+            print(widget.value)
+            if r.status_code == requests.codes.ok:
+                print("Submit Successfully!")
     
     button.on_click(submit)
