@@ -1,10 +1,12 @@
 import ipywidgets as widgets
 import requests
+# Retrieve username
+import getpass
 
 # Input:
-# lesson (e.g., geospatial-data)
-# lesson_level (e.g., beginner)
-# question - ???which type
+# lesson (e.g., "geospatial-data")
+# lesson_level (e.g., "beginner")
+# question - defined behind instead of in the notebooks
 # widget - the widget of which value will be submitted
 
 def SubmitBtn(lesson,lesson_level,question,widget):
@@ -22,20 +24,23 @@ def SubmitBtn(lesson,lesson_level,question,widget):
     output = widgets.Output()
     display(output) 
     
+
     # Submit function
     def submit(b):
 
-        # logging
+        # Logging
         host = "check.hourofci.org"
         port = "4000" 
         answer = widget.value
-        # http://127.0.0.1:5011/<lesson>/<lesson_level>/<question>/<answer>
-        url = "http://{}:{}/{}/{}/{}/{}".format(host, port, lesson, lesson_level, question, answer)
+        # v6 - Retrieve username
+        username = str(getpass.getuser())
+        # v6 - Add username
+        url = "http://{}:{}/{}/{}/{}/{}/{}".format(host, port, username, lesson, lesson_level, question, answer)
         # print(url)
-        # send_request
+        # Send_request
         r = requests.get(url)
 
-        # print widget value
+        # Print widget value
         with output:
             output.clear_output()
             print(widget.value)
