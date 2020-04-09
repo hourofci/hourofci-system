@@ -37,7 +37,7 @@ Now, you can work with your JupyterHub.
 
 ![jupyterhub](images/jupyterhub.png)
 
-See more details on [Installing of the Littlest JupyterHub](https://tljh.jupyter.org/en/latest/install/jetstream.html).
+See more details on [Installing on Jetstream](https://tljh.jupyter.org/en/latest/install/jetstream.html).
 
 ## 3. Installing Packages for All Users
 
