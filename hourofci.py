@@ -46,7 +46,7 @@ def SubmitBtn(user_agent,lesson,lesson_level,question,widget):
 
         # v6 - Add username 
         # v7 - Add user agent
-         url = "http://{}:{}/{}/{}/{}/{}/{}/{}".format(host, port, username_hash, user_agent_hash, lesson, lesson_level, question, answer)
+        url = "http://{}:{}/{}/{}/{}/{}/{}/{}".format(host, port, username_hash, user_agent_hash, lesson, lesson_level, question, answer)
         # print(url)
         # Send_request
         r = requests.get(url)
