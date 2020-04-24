@@ -158,4 +158,4 @@ See more details on [Dynamic DNS](https://support.google.com/domains/answer/6147
 
 You may want to enable HTTPS to secure data communication. The Littlest JupyterHub provides the Let’s Encrypt method to set up HTTPS.  
 
-See the commands on [Automatic HTTPS with Let’s Encrypt](http://tljh.jupyter.org/en/latest/howto/admin/https.html#automatic-https-with-let-s-encrypt)
+Follow the commands on [Automatic HTTPS with Let’s Encrypt](http://tljh.jupyter.org/en/latest/howto/admin/https.html#automatic-https-with-let-s-encrypt)
