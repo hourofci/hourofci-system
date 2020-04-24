@@ -47,7 +47,7 @@ The packages/ extensions required in Hour of CI include:
 
 Installing packages in the terminal of JupyterHub may do not work. Thus, we install packages outside JupyterHub. 
 
-Step 1. Go to the project page on [the Jetstream portal](https://use.jetstream-cloud.org/), and click **Open Web Shell**
+Step 1. Go to the project page on [the Jetstream portal](https://use.jetstream-cloud.org/), and click **Open Web Shell** on the right side.
 
 Step 2. Since we are outside JupyterHub, we need to change PATH to access user environment outside first
 ```shell
@@ -112,3 +112,50 @@ You can use an [application for nbgitpuller link generation](https://mybinder.or
 See more details on [Distributing materials to users with nbgitpuller](https://tljh.jupyter.org/en/latest/howto/content/nbgitpuller.html).
 
 Here is a link for a Hour of CI notebook demo: https://pilot.hourofci.org/hub/user-redirect/git-pull?repo=https%3A%2F%2Fgithub.com%2FIrisZhiweiYan%2Fhourofci-demo&subPath=geospatial-data%2Fgd-1.ipynb&app=notebook
+
+## 7. Set up Dynamic DNS
+
+The IP address of your JupyterHub server will change if you suspend or stop the server, so a dynamic DNS is needed.
+
+Step 1. Set up a Dynamic DNS synthetic record
+
+Step 2. Sep up and configure a client program in your JupyterHub server, using the username and password generated in Step 1.  
+DDclient is suggested to used. You need to install ddclient in your server:  
+```shell
+sudo apt install ddclient
+```
+Once the installation completes, a configuration wizard will automatically start. You can type anything randomly, because the configuration file will be edited manually.  
+
+Open the configuration file after the wizard completes:
+```shell
+sudo nano /etc/ddclient.conf
+```
+
+Replace the content with the following: 
+```shell
+# /etc/ddclient.conf
+protocol=dyndns2
+use=web
+server=domains.google.com
+ssl=yes
+login=generated_username
+password=generated_password
+your_resource.your_domain.tld
+```
+
+Remember to replace with your username and password, and domain name. 
+
+Run the following code to detect your current IP address and update your DNS server:
+```shell
+sudo ddclient
+```
+You need to run ddclient each time when the IP address is updated, or you can configure it to check and update IP periodically.  
+
+See more details on [Dynamic DNS](https://support.google.com/domains/answer/6147083?hl=en)
+
+
+## 8. Enable HTTPS
+
+You may want to enable HTTPS to secure data communication. The Littlest JupyterHub provides the Let’s Encrypt method to set up HTTPS.  
+
+See the commands on [Automatic HTTPS with Let’s Encrypt](http://tljh.jupyter.org/en/latest/howto/admin/https.html#automatic-https-with-let-s-encrypt)
