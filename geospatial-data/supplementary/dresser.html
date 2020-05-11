@@ -1,3 +1,5 @@
+<!-- Add logging -->
+
 <!DOCTYPE html>
 <html>
   <head>
@@ -5,8 +7,15 @@
 
     <title>D3 Spatial Grid</title>
 
+
     <!-- load D3 -->
     <script src="https://rawcdn.githack.com/coopbri/hci-binder/362464110b5273593e9fdd1dc1c0ae3e4f1da224/lib/d3.min.js"></script>
+
+    <!-- v7: load jQuery (bundled with Jupyter; only needed outside of Jupyter) -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+     <!-- v7: load jQuery md5 plugin -->
+    <script src="../../jquery.md5.js"></script>
 
     <!-- global styles -->
     <style>
@@ -98,6 +107,17 @@
       var open = false;
       var done = false;
 
+      // v7: variables for logging
+      // var username_hash = "test";
+      var username = location.href.split('/')[4];
+      // var username = parent.document.getElementById('username');
+      // var username_hash = $.md5(username);
+      var user_agent_hash = $.md5(navigator.userAgent);
+      // user_agent_hash = navigator.userAgent;
+      var answer
+      // var url_pre = "http://100.64.8.23:5011/"+username+"/"+user_agent_hash+"/geospatial-data/beginner/Q4/";
+      var url_pre = "https://check.hourofci.org:4000/"+username+"/"+user_agent_hash+"/geospatial-data/beginner/Q4/";
+
       // draw side of drawer
       var side = svg.append("rect")
         .attr("width", 12).attr("height", 50)
@@ -112,6 +132,14 @@
         .attr("x", 270).attr("y", 105)
         .style("display", "none");
 
+      // v7
+      var incorrect = d3.select('svg').selectAll("*:not(.correct)").on("click", function() {
+        // log "False" when click incorrect space
+        answer = "False"
+        url = url_pre+answer;
+        $.get(url)
+      });
+
       var correct = d3.selectAll(".correct").on("click", function() {
         if (!open) {
           // show side and hippo
@@ -120,6 +148,11 @@
 
           // "pull" drawer
           correct.attr("transform", "translate(10,10)");
+
+          // v7: log "True" when click the correct space
+          answer = "True";
+          url = url_pre+answer;
+          $.get(url)
 
           // display message if first completion
           if (!done) {
