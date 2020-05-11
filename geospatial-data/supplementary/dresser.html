@@ -109,15 +109,13 @@
       var done = false;
 
       // v7: variables for logging
-      // var username_hash = "test";
       var username = location.href.split('/')[4];
-      // var username = parent.document.getElementById('username');
-      // var username_hash = $.md5(username);
+      var username_hash = $.md5(username);
       var user_agent_hash = $.md5(navigator.userAgent);
-      // user_agent_hash = navigator.userAgent;
       var answer
+
       // var url_pre = "http://100.64.8.23:5011/"+username+"/"+user_agent_hash+"/geospatial-data/beginner/Q4/";
-      var url_pre = "https://check.hourofci.org:4000/"+username+"/"+user_agent_hash+"/geospatial-data/beginner/Q4/";
+      var url_pre = "https://check.hourofci.org:4000/"+username_hash+"/"+user_agent_hash+"/geospatial-data/beginner/Q4/";
 
       // draw side of drawer
       var side = svg.append("rect")
