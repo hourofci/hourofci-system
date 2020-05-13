@@ -37,7 +37,8 @@ def SubmitBtn(user_agent,lesson,lesson_level,question,widget):
         answer = widget.value
 
         # v6 - Retrieve username
-        username = str(getpass.getuser())
+        # username = str(getpass.getuser())
+        username = str(getpass.getuser()).split('-')[1] # In Jupyterhub, getuser() = Jupyter-username
         # v7 - Encode username
         username_hash = hashlib.md5(username.encode()).hexdigest()
 
