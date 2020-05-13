@@ -136,7 +136,17 @@
         // log "False" when click incorrect space
         answer = "False"
         url = url_pre+answer;
-        $.get(url)
+        // $.get(url)
+        $.ajax({
+          type: 'GET',
+          url: url,
+          success: function() {
+            console.log("Answer is false");
+          },
+          error: function() {
+            alert("Error");
+          }
+        });
       });
 
       var correct = d3.selectAll(".correct").on("click", function() {
@@ -151,7 +161,18 @@
           // v7: log "True" when click the correct space
           answer = "True";
           url = url_pre+answer;
-          $.get(url)
+          // $.get(url)
+
+          $.ajax({
+            type: 'GET',
+            url: url,
+            success: function() {
+              console.log("Answer is true");
+            },
+            error: function() {
+              alert("Error");
+            }
+          });
 
           // display message if first completion
           if (!done) {
