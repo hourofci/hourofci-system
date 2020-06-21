@@ -29,7 +29,7 @@ curl https://raw.githubusercontent.com/jupyterhub/the-littlest-jupyterhub/master
 
 After that, Click **Save and Add Script** and then click **Continue to Launch** to finish configuring the advanced options.  
 
-Step 5. Click **Launch Instance**, and your server is getting created. You can see the status on the dashboard.  When the status is Active and the progress bar become a solid green, your JupyterHub is ready for use.
+Step 5. Click **Launch Instance**, and your server is getting created. You can see the status on the instance dashboard.  When the status is Active and the progress bar become a solid green, your JupyterHub is ready for use.
 
 Step 6. Copy the IP Address of your server and access it from a web browser. You will go to the JupyterHub login page. Use the admin username set in the deployment script, and set a password when first log in.  
 
