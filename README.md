@@ -61,7 +61,7 @@ sudo env PATH=${PATH} conda install -c conda-forge jupyter_contrib_nbextensions
 
 Note: When using sudo, the PATH environment variable is usually reset, for security reasons. Thus, we nned to specify the PATH
 
-Step 4. Enable/Disable extensions
+Step 4. Enable/Disable extensions   
 After installing contributed extensions, you can enable the extensions you would like to use. The syntax for this is jupyter nbextension enable followed by the path to the desired extension’s main file. In Hour of CI, two extesions will be enabled: `init_cell` and `python-markdown`:
 ```shell
 sudo env PATH=${PATH} jupyter nbextension enable init_cell/main --sys-prefix
@@ -85,14 +85,14 @@ Note: Don't use the Nbextensions tab (jupyter_nbextensions_configurator) to enab
 
 ## 4. Installing Packages for All Users
 
-The following packages are installed using conda: 
+The following packages are installed using **conda**: 
 * [RISE](https://rise.readthedocs.io/en/maint-5.6/installation.html): turns jupyter notebooks into a live presentation.
 * [pillow](https://pillow.readthedocs.io/en/stable/): adds image processing capabilities.
 * [geopandas](https://geopandas.org/): extends pandas to allow spatial data types and operations.
 * [shapely](https://shapely.readthedocs.io/en/stable/project.html): can be used for manipulation and analysis of geometric objects.
 * [ipyleaflet](https://ipyleaflet.readthedocs.io/en/latest/): creates interactive maps or layers in the Jupyter Notebook. 
 * [osmnx](https://osmnx.readthedocs.io/en/stable/index.html): lets you download spatial geometries and model, project, visualize, and analyze real-world street networks from OpenStreetMap’s APIs.
-* GDAL: includes two libraries – GDAL for manipulating geospatial raster data and OGR for manipulating geospatial vector data.
+* [GDAL](): includes two libraries – GDAL for manipulating geospatial raster data and OGR for manipulating geospatial vector data.
 * [mapclassify](https://pysal.org/mapclassify/): can be used for Choropleth map classification.
 * [mplleaflet](https://github.com/jwass/mplleaflet): converts a matplotlib plot into a Leaflet web map. It can also embed the Leaflet map in an Jupyter notebook.
 * [rasterio](https://rasterio.readthedocs.io/en/latest/): reads and writes GeoTIFF and other formats for raster datasets.
@@ -116,7 +116,7 @@ sudo env PATH=${PATH} pip install mordecai
 sudo env PATH=${PATH} python -m spacy download en_core_web_lg
 ```
 
-ttf-mscorefonts-installer: the installer for Microsoft TrueType core fonts which will fetch and install the fonts.
+[ttf-mscorefonts-installer](): the installer for Microsoft TrueType core fonts which will fetch and install the fonts.
 ```shell
 sudo env PATH=${PATH} apt install ttf-mscorefonts-installer
 ```
