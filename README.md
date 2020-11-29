@@ -10,7 +10,7 @@ Step 1. Log into [the Jetstream portal](https://use.jetstream-cloud.org/).
 
 Step 2. Select the **Ubuntu 18.04 Devel and Docker** image and launch.  
 
-Step 3. In the dialog **Launch an Instance / Basic Options**, type your own **Instance Name** and select **m1.medium** (recommended) under **Instance Size**. Select a **Base Image Version** except 1.36, in which `jupyter_contrib_nbextensions` cannot be installed correctly. 
+Step 3. In the dialog **Launch an Instance / Basic Options**, type your own **Instance Name** and select **m1.medium** (recommended) under **Instance Size**. Select a **Base Image Version** except 1.35 and 1.36, in which `jupyter_contrib_nbextensions` cannot be installed correctly. 
 
 Step 4. Click **Advanced Options**, and then click **Create New Script**. 
 
