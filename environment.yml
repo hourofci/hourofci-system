@@ -1,6 +1,0 @@
-name: hourofci-environment
-channels:
-  - conda-forge
-dependencies:
-  - jupyter_contrib_nbextensions
-  - rise
