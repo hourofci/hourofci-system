@@ -3,7 +3,14 @@
 
 ## Introduction
 There are many questions and interactive animations in Hour of CI lessons. Users need to answer the questions or play with the animations to learn the knowledge. We would like to record users’ answers/ interactions in our database. We use a restful API which will pass the lessons’ information and answers as parameters and call a function predefined in the database.
-Installation and configuration of the server for logging. 
+
+In the following sections, we will introduce how to set up for the database and the logging API:
+1. [Installing the Virtual Machine](#Installing-the-Virtual-Machine)
+2. [Installing and Configuring the PostgreSQL server](#Installing-and-Configuring-the-PostgreSQL-server)
+3. [Creating Tables and Functions in the Database](#Creating-Tables-and-Functions-in-the-Database)
+4. [Developing a RESTful API for Logging](#Developing-a-RESTful-API-for-Logging)
+
+<br>
 
 ## Installing the Virtual Machine
 We create a virtual machine on JetStream to serve our database and logging API. The steps are very similar to those for Installing the littlest JupyterHub, but we do not need to add a script.  
@@ -19,6 +26,8 @@ Step 5. Click Launch Instance, and your virtual machine is getting created. You 
 
 Step 6. Set up Dynamic DNS  
 Follow the steps in Setting up Dynamic DNS for JupyteHub but use a different domain name. Then we can use the domain name instead of the ip address when connecting to the servers in our virtual machine. 
+
+After setting up the virtual machine, we are going to serve PostgreSQL databases and Flask web APIs on it. 
 
 ## Installing and Configuring the PostgreSQL server  
 We use PostgreSQL to serve our database, so we need to install PostgreSQL on our virtual machine first. After that we can use commands or pgAdmin to manage the database.  
@@ -123,6 +132,7 @@ Remember to restart the server after that
 ```shell
 sudo /etc/init.d/postgresql restart
 ```
+<br>
 
 ## Creating Tables and Functions in the Database
 You can create tables, functions, and grants in the PostgreSQL prompt, but pgAdmin is recommended. pgAdmin is an Open Source administration and development platform for PostgreSQL. It provides a graphical interface where the creation, maintenance, use and visualization of database objects are simplified. 
@@ -138,6 +148,7 @@ Step 3. Create a function that insert data into the database
 
 Finally, there are 2 main tables `loggingtable` and `loggingtable_tes`. The former is used for production and the latter is used for development/testing. Or you can just use the former one if you can distinguish between the users’ records and the developer’s records. The `logging` function insert data into `loggingtable` and  `logging2` inserts data into `loggingtable_test`.
 
+<br>
 
 ## Developing a RESTful API for Logging
 We build an API with Python and Flask. The virtual machine we create for the database will be used to serve Flask.
@@ -229,8 +240,6 @@ Since we have enabled HTTPS, we need to install the certificate when running the
 su
 gunicorn --certfile /etc/letsencrypt/live/check.hourofci.org/fullchain.pem --keyfile /etc/letsencrypt/live/check.hourofci.org/privkey.pem -w4 -b 0.0.0.0:4000 hourofciLog:app
 ```
-
-[Image]
 
 If want to stop the service, use:
 ```shell

@@ -8,7 +8,7 @@ The relevant files (e.g., HTML files, images) are in  \<lesson-level>\<lesson>\s
 
 <br>
 
-## [custom.js](/supplementary/js/custom.js)
+## [custom.js](./supplementary/js/custom.js)
 This file customizes Hour of CI lesson notebooks:
 Get the user agent string, lesson and lesson level from the webpage url automatically.
 Pass them to Python variables, so we can use them in the notebooks.
@@ -20,7 +20,7 @@ Record if users click a link (e.g., “Go to the next section”) by adding a cl
 
 <br>
 
-## [hourofci.py](/supplementary/hourofci.py)
+## [hourofci.py](./supplementary/hourofci.py)
 The main part in this file is the `SubmitBtn` function. Notice that two different APIs are used for production and for testing purposes.
 
 <br>
