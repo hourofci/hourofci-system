@@ -2,9 +2,11 @@
 
 ## File Organization
 The organization of our lessons and the supplementary files are in hourofci-demo.
-hourofci.py and JavaScript files are under the supplementary folder.
-The path of a lesson notebook should be \<lesson-level>\<lesson>\<filename>.ipynb
-The relevant files (e.g., HTML files, images) are in  \<lesson-level>\<lesson>\supplementary   
+hourofci.py and JavaScript files are under the supplementary folder.  
+
+The path of a lesson notebook should be /\<lesson-level>/\<lesson>/\<filename>.ipynb.     
+
+The relevant files (e.g., HTML files, images) are in /\<lesson-level>/\<lesson>/supplementary   
 
 <br>
 
@@ -101,6 +103,7 @@ Step 3. Send an API request when an action is taken (e.g., click a button, move 
         alert("Error");
       }
     });
+    ...
   });
 ...
 </script>

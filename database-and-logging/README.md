@@ -29,6 +29,8 @@ Follow the steps in Setting up Dynamic DNS for JupyteHub but use a different dom
 
 After setting up the virtual machine, we are going to serve PostgreSQL databases and Flask web APIs on it. 
 
+<br>
+
 ## Installing and Configuring the PostgreSQL server  
 We use PostgreSQL to serve our database, so we need to install PostgreSQL on our virtual machine first. After that we can use commands or pgAdmin to manage the database.  
 
@@ -184,7 +186,7 @@ pip install psycopg2-binary
 ```
 
 Step 4. Design a API with Flask
-See **houofciLog.py**
+See [houofciLog.py](./hourofciLog.py)
 
 Step 5. Enable HTTPS
 We need to obtain an HTTPS certificate from Let's Encrypt. First, install a tool `certbot` for this:
