@@ -8,30 +8,7 @@ The relevant files (e.g., HTML files, images) are in  \<lesson-level>\<lesson>\s
 
 <br>
 
-## Template notebook
-We provide a template for the lesson notebook, which is in \template-lessons\template\template.ipynb
-
-When you go back to the normal jupyter notebook, you can find a toggle button for raw code. When you click this button, all the code cells that are hidden in this notebook will be shown. The cell for the button should be in every lesson notebook. It starts the following setup for a Hour of CI lesson notebook:
-Import Python libraries
-* Import hourofci.py
-* Load custom.js 
-* Hide output indicator (e.g., Out[1])
-* Hide code by introducing a toggle button "Toggle raw code"  
-
-This cell is set to be:
-* An initialization cell (Toolbar > View > Cell Toolbar > Initialization Cell is checked)
-* A cell that is not displayed in slide (the Slide Type is 'Skip')
-
-In the following cells, there are many examples showing how to use the notebook (our notebook has some custom settings because hourofci.py and custom.js are loaded).
-* Initialize or hide a code cell by adding tags “Init” or “Hide” (defined in custom.js)
-* Insert a HTML file using IFrame.
-* Record the action “a user does run the code” by adding a tag (The play button is defined in custom.js).
-* Insert an image
-* Create a widget (any type of widget) and a submit button which can submit the answer to our database (The submit button is defined in hourofci.py).  
-
-<br>
-
-## Custom.js
+## [custom.js](/supplementary/js/custom.js)
 This file customizes Hour of CI lesson notebooks:
 Get the user agent string, lesson and lesson level from the webpage url automatically.
 Pass them to Python variables, so we can use them in the notebooks.
@@ -43,8 +20,31 @@ Record if users click a link (e.g., “Go to the next section”) by adding a cl
 
 <br>
 
-## Hourofci.py
+## [hourofci.py](/supplementary/hourofci.py)
 The main part in this file is the `SubmitBtn` function. Notice that two different APIs are used for production and for testing purposes.
+
+<br>
+
+## Template notebook
+We provide a template for the lesson notebook, which is in \template-lessons\template\template.ipynb
+
+When you go back to the normal jupyter notebook, you can find a toggle button for raw code. When you click this button, all the code cells that are hidden in this notebook will be shown. The cell for the button should be in every lesson notebook. It starts the following setup for a Hour of CI lesson notebook:
+Import Python libraries  
+* Import hourofci.py
+* Load custom.js 
+* Hide output indicator (e.g., Out[1])
+* Hide code by introducing a toggle button "Toggle raw code"  
+
+This cell is set to be:  
+* An initialization cell (Toolbar > View > Cell Toolbar > Initialization Cell is checked)
+* A cell that is not displayed in slide (the Slide Type is 'Skip')
+
+In the following cells, there are many examples showing how to use the notebook (our notebook has some custom settings because hourofci.py and custom.js are loaded).  
+* Initialize or hide a code cell by adding tags “Init” or “Hide” (defined in custom.js)
+* Insert a HTML file using IFrame.
+* Record the action “a user does run the code” by adding a tag (The play button is defined in custom.js).
+* Insert an image
+* Create a widget (any type of widget) and a submit button which can submit the answer to our database (The submit button is defined in hourofci.py).  
 
 <br>
 
